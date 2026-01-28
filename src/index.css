@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "./styles/theme.css";
+@config "../tailwind.config.js";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink antialiased;
+    font-family: var(--font-sans);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-display {
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.12'/></svg>");
+    background-size: 160px 160px;
+  }
+
+  .hero-glow {
+    background:
+      radial-gradient(600px 320px at 12% 10%, rgba(var(--color-glow-1), 0.18), transparent 60%),
+      radial-gradient(520px 260px at 88% 0%, rgba(var(--color-glow-2), 0.14), transparent 60%);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
