@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { LayoutGrid, Database, PlayCircle, Settings, BoxSelect, Network } from "lucide-react";
+import { Database, PlayCircle, Settings, BoxSelect, Network } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Sidebar = () => {
@@ -14,9 +14,7 @@ export const Sidebar = () => {
         <div className="flex h-full w-64 shrink-0 flex-col border-r border-border bg-surface/90 backdrop-blur">
             <div className="p-6">
                 <div className="flex items-center gap-3 text-base font-semibold text-ink">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-white shadow-sm">
-                        <LayoutGrid className="h-4 w-4" />
-                    </div>
+                    <img src="/favicon.png" alt="GraphAgent Logo" className="h-9 w-9 object-contain" />
                     <span>GraphAgent</span>
                 </div>
                 <p className="mt-2 text-xs text-muted">Premium graph orchestration</p>
